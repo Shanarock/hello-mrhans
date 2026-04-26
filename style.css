@@ -1,0 +1,99 @@
+body {
+    background-color: #ffeef2;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    overflow: hidden;
+}
+
+#main-container { text-align: center; position: relative; width: 100%; }
+
+.page { transition: opacity 0.5s ease-in-out; }
+.hidden { display: none; opacity: 0; }
+.active { display: block; opacity: 1; }
+
+/* GIF Styling */
+.gif-box img {
+    width: 220px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 8px 15px rgba(255, 77, 109, 0.2);
+}
+
+/* Envelope Styling */
+.envelope {
+    position: relative;
+    width: 150px;
+    height: 100px;
+    background-color: #ff8fa3;
+    margin: 20px auto;
+    cursor: pointer;
+    border-radius: 0 0 5px 5px;
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    width: 0; height: 0;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    border-top: 60px solid #ff4d6d;
+    z-index: 3;
+}
+
+.pocket {
+    position: absolute;
+    bottom: 0;
+    width: 150px;
+    height: 60px;
+    background-color: #ff758f;
+    z-index: 2;
+}
+
+/* Message Card (Page 2) */
+.card-body {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    border: 3px solid #ff4d6d;
+    max-width: 300px;
+    margin: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+#final-trigger {
+    background-color: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* Heart Animation */
+.heart-particle {
+    position: absolute;
+    color: #ff4d6d;
+    pointer-events: none;
+    animation: flyUp 2s ease-out forwards;
+}
+
+@keyframes flyUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-200px) translateX(20px) scale(0); opacity: 0; }
+}
+
+.love-banner {
+    color: #c9184a;
+    font-size: 3rem;
+    animation: popIn 0.8s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
